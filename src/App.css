@@ -119,144 +119,73 @@ header .navbar-brand {
   }
 }
 
-/************ Journal Css ************/
-.journal-container {
+/************ Ethical Questions Css ************/
+.ethical-questions-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
   padding: 20px;
+  background-color: white; /* Optional: white background for the container */
+  border-radius: 8px; /* Rounded corners */
+  font-family: "Lora", serif;
 }
 
-.image-wrapper {
-  width: 30%;
-  margin-bottom: 20px;
+.question-wrapper {
+  margin-bottom: 30px; /* Adds space between each question and the next one */
+}
+
+.custom-question-wrapper {
+  margin-top: 40px; /* Adds padding between the choosing options and the custom question */
   text-align: center;
-  animation: slideIn 0.5s ease-in-out;
 }
 
-.journal-image {
-  max-width: 100%;
-  height: auto;
+.response-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+}
+
+.response-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.journal-image:hover {
+.response-button.for {
+  background-color: #28a745;
+  color: white;
+}
+
+.response-button.against {
+  background-color: #dc3545;
+  color: white;
+}
+
+.response-button.neutral {
+  background-color: #ffc107;
+  color: white;
+}
+
+.response-button.selected {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 
-.journal-heading {
-  font-family: "Lora", serif;
-  font-weight: normal;
-  font-style: normal;
-  margin-top: 10px;
+.response-button:hover {
+  opacity: 0.8;
+  transform: translateY(-5px); /* Hover-up effect */
 }
 
 @media (max-width: 768px) {
-  .journal-container {
-    padding: 10px;
-  }
-
-  .image-wrapper {
-    width: 100%;
-  }
-}
-
-/************ Journal Detail Css ************/
-.journal-detail-container {
-  text-align: center;
-  padding: 20px;
-}
-
-.journal-detail-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.journal-detail-heading {
-  font-family: "Lora", serif;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.description-container {
-  display: inline-block;
-  width: 80%;
-  padding: 10px;
-  margin-top: 10px;
-  text-align: left;
-  white-space: pre-line;
-  overflow-wrap: break-word;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.journal-detail-description {
-  font-family: "Lora", serif;
-  font-weight: normal;
-  margin: 0;
-  text-align: justify;
-}
-
-@media (max-width: 768px) {
-  .journal-detail-container {
-    padding: 10px;
-  }
-
-  .description-container {
-    width: 100%;
-  }
-}
-
-/************ About Css ************/
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  padding: 20px;
-  text-align: center;
-}
-
-.linh-pic {
-  max-width: 300px;
-  height: auto;
-  border-radius: 70%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.about-header {
-  font-family: "Lora", serif;
-  font-weight: bold;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.about-paragraph {
-  font-family: "Lora", serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .about-container {
-    padding: 10px;
-  }
-
-  .linh-pic {
-    max-width: 200px;
-  }
-
-  .about-header {
-    font-size: 2rem;
-  }
-
-  .about-paragraph {
-    font-size: 1rem;
+  .response-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -313,4 +242,86 @@ header .navbar-brand {
     height: 40px;
     font-size: 1rem;
   }
+}
+
+/******** Forgot Pass *********/
+.forgot-password-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #343a40; /* Dark color for the heading */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%; /* Full width */
+  max-width: 400px; /* Limit width for larger screens */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #495057; /* Darker label color */
+}
+
+.input-field {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+.reset-button {
+  width: 100%; /* Full width */
+  padding: 10px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.reset-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+/****** Analysis Page *****/
+.analyze-result-button {
+  margin-top: 20px;
+}
+
+.analysis-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.analysis-box {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }

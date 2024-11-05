@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { Home } from "./Home";
-import { About } from "./About";
-import { Anthology } from "./Anthology";
-import { Journal } from "./Journal";
+import { LogIn } from "./LogIn";
+import { EthicalGen } from "./EthicalGen";
 import { Search } from "./Search";
+import { About } from "./About";
+import { ForgotPass } from "./ForgotPass"; 
+import { AnalysisPage } from "./AnalysisPage"; // Import the AnalysisPage component
 import logo from "../assets/img/umbrella.png";
 import searchIcon from "../assets/img/icon.png";
-import { JournalDetail } from "./JournalDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -15,18 +15,6 @@ export default function Navigation() {
   return (
     <BrowserRouter>
       <div>
-        {/* Header section for the logo and Linh's Home */}
-        <header className="text-center py-3 bg-white">
-          <Link to="/">
-            <img src={logo} alt="Linh's Logo" style={{ maxWidth: "100px" }} />
-          </Link>
-          <div>
-            <a className="navbar-brand" href="/">
-              Linh's Home
-            </a>
-          </div>
-        </header>
-
         {/* Navbar */}
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
@@ -44,16 +32,13 @@ export default function Navigation() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <div className="navbar-nav mx-auto">
                 <Link className="nav-link" to="/">
-                  Home
-                </Link>
-                <Link className="nav-link" to="/Journal">
-                  Journal
-                </Link>
-                <Link className="nav-link" to="/Anthology">
-                  Anthology
-                </Link>
-                <Link className="nav-link" to="/About">
                   About
+                </Link>
+                <Link className="nav-link" to="/EthicalGen">
+                  Ethical Questions
+                </Link>
+                <Link className="nav-link" to="/LogIn">
+                  Log In
                 </Link>
                 <Link className="nav-link" to="/Search">
                   <img
@@ -70,12 +55,12 @@ export default function Navigation() {
         {/* Main content */}
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Journal" element={<Journal />} />
-            <Route path="/Journal/:imageName" element={<JournalDetail />} />
-            <Route path="/Anthology" element={<Anthology />} />
-            <Route path="/About" element={<About />} />
+            <Route path="/" element={<About />} />
+            <Route path="/EthicalGen" element={<EthicalGen />} />
+            <Route path="/LogIn" element={<LogIn />} />
             <Route path="/Search" element={<Search />} />
+            <Route path="/ForgotPass" element={<ForgotPass />} />
+            <Route path="/Analysis" element={<AnalysisPage />} /> {/* Add AnalysisPage route */}
           </Routes>
         </div>
       </div>
